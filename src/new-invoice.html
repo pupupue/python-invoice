@@ -1,0 +1,101 @@
+<div class="page-container">
+  <div class="header">
+    <div class="logo">
+      <img
+        src="https://laurinsceramics.com/wp-content/uploads/2023/04/newprofilepiclaurinsceramics.jpg"
+      />
+    </div>
+    <div class="invoice-nr">
+      <div class="invoice-title">INVOICE</div>
+      <div style="color: #a3a3a3" class="invoice-number">
+        # {{ invoice_nr }}
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="split-content">
+      <div class="flex-col">
+        <div class="company">
+          <p class="bold">{{ company['legal_entity'] }}</p>
+          <span>{{ company['id'] }}</span>
+        </div>
+        <div class="split-content">
+          <div class="bill-to">
+            <h3 style="color: #78716c">Bill To:</h3>
+            <p class="bold">{{ customer['billing']['name'] }}</p>
+            <p style="color: #78716c">{{ customer['billing']['address'] }}</p>
+          </div>
+          <div class="ship-to">
+            <h3 style="color: #78716c">Ship To:</h3>
+            <p class="bold">{{ customer['shipping']['name'] }}</p>
+            <p style="color: #78716c">{{ customer['shipping']['address'] }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-col">
+        <div style="color: #78716c" class="date-row">
+          <div>Date:</div>
+          <div>{{ date['issued'] }}</div>
+        </div>
+        <div style="color: #78716c" class="date-row">
+          <div>Due Date:</div>
+          <div>{{ date['due'] }}</div>
+        </div>
+        <div
+          style="background-color: #f5f5f4; font-weight: 700"
+          class="date-row"
+        >
+          <div>Balance Due:</div>
+          <div>&euro;{{ order['total_amount'] }}</div>
+        </div>
+      </div>
+    </div>
+    <table class="items-list">
+      <thead class="items-header">
+        <tr>
+          <th class="w-7/12">Item</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for item in items %}
+        <tr style="border-top: #e7e5e4 solid 1px" class="item">
+          <td>{{ item['name'] }}</td>
+          <td>{{ item['quantity'] }}</td>
+          <td>&euro;{{ item['rate'] }}</td>
+          <td>&euro;{{ item['amount'] }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <div class="order-summary w-third">
+      <div class="order-summary-row">
+        <div style="color: #78716c">Subtotal:</div>
+        <div>&euro;{{ order['subtotal_amount'] }}</div>
+      </div>
+      <div class="order-summary-row">
+        <div style="color: #78716c">Shipping:</div>
+        <div>&euro;{{ order['shipping_amount'] }}</div>
+      </div>
+      <div class="order-summary-row">
+        <div style="color: #78716c">Total:</div>
+        <div style="color: #000; font-weight: 700">
+          &euro;{{ order['total_amount'] }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-info">
+      {{ company['email'] }} | {{ company['phone'] }} | {{ company['website'] }}
+    </div>
+    <div class="footer-thanks">
+      <img
+        src="https://github.com/anvilco/html-pdf-invoice-template/raw/main/img/heart.png"
+        alt="heart"
+      />Thank you!
+    </div>
+  </div>
+</div>

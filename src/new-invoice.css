@@ -1,0 +1,327 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 0.5rem 3rem;
+}
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100vw;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 200px;
+}
+.logo > img {
+  width: 160px;
+  height: 160px;
+}
+.invoice-nr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.invoice-title {
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+.invoice-number {
+  font-size: 20px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+.split-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.split-content > * {
+  width: 50%;
+}
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.company {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.company * {
+  margin: 0;
+  padding: 0;
+}
+.company > * + * {
+  margin-top: 4px;
+}
+.bill-to {
+  padding-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.bold {
+  font-weight: 700;
+}
+.bill-to * {
+  margin: 0;
+  padding: 0;
+}
+.bill-to > * + * {
+  margin-top: 6px;
+}
+.bill-to h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.ship-to {
+  padding-top: 24px;
+  margin-left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.ship-to * {
+  margin: 0;
+  padding: 0;
+}
+.ship-to > * + * {
+  margin-top: 6px;
+}
+.ship-to h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.date-row {
+  font-size: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 4px;
+}
+
+.date-row > * + * {
+  margin-left: 24px;
+}
+
+.date-row > * {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+table tr td {
+  text-align: left;
+}
+table tr th {
+  text-align: left;
+}
+
+table tr td:last-child {
+  text-align: right;
+}
+table tr th:last-child {
+  text-align: right;
+}
+.page-container table tr td {
+  padding: 12px;
+  border-width: 0;
+  font-weight: 700;
+}
+.page-container table tr th {
+  padding: 12px;
+  border-width: 0;
+  font-weight: 600;
+}
+
+.items-list {
+  margin-top: 72px;
+  width: 100%;
+  border-collapse: collapse;
+}
+.items-header {
+  background: #262626;
+  color: #fff;
+}
+.tbody > * + * {
+  border-top: #94a3b8 solid 1px;
+}
+.item {
+}
+.order-summary {
+  margin-top: 72px;
+}
+.w-third {
+  margin-left: auto;
+  margin-right: 32px;
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.order-summary-row {
+  font-size: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 4px;
+  text-align: end;
+}
+
+.order-summary-row > * {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.order-summary-row > * {
+  margin-left: 16px;
+}
+.footer {
+  margin-top: 100px;
+}
+
+.footer-thanks {
+  font-size: 1.125em;
+}
+
+.footer-thanks img {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  width: 16px;
+  margin-right: 4px;
+}
+
+.footer-info {
+  float: right;
+  margin-top: 5px;
+  font-size: 0.75em;
+  color: #ccc;
+}
+
+.footer-info span {
+  padding: 0 5px;
+  color: black;
+}
+
+.footer-info span:last-child {
+  padding-right: 0;
+}
