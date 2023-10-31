@@ -10,10 +10,11 @@ import pprint
 # today_date = datetime.today().strftime("%d %b, %Y")
 # month = datetime.today().strftime("%B")
 
-def getDate ():
+def getDate (order):
+  date_raw = order['Date'].split()[0]
   date = {
-    'issued': datetime.fromisoformat('2023-09-13').strftime("%d %b, %Y"),
-    'due': datetime.fromisoformat('2023-09-13').strftime("%d %b, %Y"),
+    'issued': datetime.fromisoformat(date_raw).strftime("%d %b, %Y"),
+    'due': datetime.fromisoformat(date_raw).strftime("%d %b, %Y"),
   }
   return date
 
@@ -104,7 +105,7 @@ def main():
       item = getItem(product_name, quantity)
       items.append(item)
 
-    date = getDate()
+    date = getDate(order)
 
     order_details = getOrderDetails(items)
 
