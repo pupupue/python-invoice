@@ -2,7 +2,7 @@ import jinja2
 import pdfkit
 from datetime import datetime
 import pandas as pd
-import pprint
+from pprint import pprint
 
 
 # hardcoded_date = datetime.fromisoformat('2023-09-13').strftime("%d %b, %Y")
@@ -35,11 +35,11 @@ def parse_product_string(product_string):
     return products
 
 def getItem (item_name, q):
-  products_df = pd.read_csv('./input/products.csv', header=0)
+  products_df = pd.read_csv('./input/products-march.csv', header=0, low_memory=False)
   product_df = products_df[products_df["Product title"] == item_name]
   name = item_name
   quantity = q
-  rate = float(product_df['Price'])
+  rate = float(product_df['Price'].iloc[0])
   amount = quantity * rate
   return {
     'name': name,
@@ -92,13 +92,12 @@ company = {
 
 def main():
   # Read the CSV file with the first line as header
-  df = pd.read_csv('./input/orders.csv', header=0)
+  df = pd.read_csv('./input/orders-april.csv', header=0, low_memory=False)
   orders_df = df[df['Status'] == 'completed']
 
   for index, order in orders_df.iterrows():
     invoice_nr = order['Order #']
     customer = getCustomer(order)
-
     items_object = parse_product_string(order['Product(s)'])
     items = []
     for product_name, quantity in items_object.items():
